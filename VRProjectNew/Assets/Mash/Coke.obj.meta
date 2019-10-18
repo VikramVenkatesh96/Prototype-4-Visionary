@@ -1,16 +1,16 @@
 fileFormatVersion: 2
-guid: ebdc70ba433d40241b17733b09022b77
+guid: de4c918584f59164ab5e56100fc72d46
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
-    100002: pCube46
+    100002: polySurface3
     400000: //RootNode
-    400002: pCube46
-    2100000: pCube46Mat
-    2300000: pCube46
-    3300000: pCube46
-    4300000: pCube46
+    400002: polySurface3
+    2100000: polySurface3Mat
+    2300000: polySurface3
+    3300000: polySurface3
+    4300000: polySurface3
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -39,7 +39,7 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 0
+    isReadable: 1
   meshes:
     lODScreenPercentages: []
     globalScale: 1
