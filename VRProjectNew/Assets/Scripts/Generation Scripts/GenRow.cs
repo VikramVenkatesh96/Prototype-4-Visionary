@@ -35,7 +35,8 @@ public class GenRow : MonoBehaviour
             for (int j = 0; j < MAXNUMBER; ++j)
             {
                 Vector3 position = new Vector3(startPositions[i].x, startPositions[i].y, offsets[i]);
-                Instantiate(stock, position, stock.transform.rotation, parent.transform);
+                GameObject newItem = Instantiate(stock, position, stock.transform.rotation, parent.transform);
+                newItem.name = stock.name + " " + j;
                 offsets[i] -= Random.Range(minGapBetweenObjects, maxGapBetweenObjects);
             }
         }
