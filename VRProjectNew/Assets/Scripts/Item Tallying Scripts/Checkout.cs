@@ -8,11 +8,7 @@ public class Checkout : MonoBehaviour
     public List<GameObject> shoppingList;
 
     void Start()
-    {
-        shoppingList = new List<GameObject>();
-
-        //shoppingList.Add(GameObject.FindGameObjectWithTag("Items"));
-
+    { 
         //a little manual effort but saves a lot of computations
         check = GameObject.FindGameObjectWithTag("Basket").transform.GetChild(5).GetComponent<CheckItems>();
     }
@@ -20,18 +16,21 @@ public class Checkout : MonoBehaviour
     {   /*Look at the output log for the item names 
         and write your code here*/
         //Get the item collider list
-        List<Collider> basketItems = check.GetBasketItems();
+        List<string> basketItems = check.GetBasketItems();
+
+        for(int i = 0; i < basketItems.Count; i++)
+        {
+            basketItems[i] = basketItems[i].Split(' ')[0];
+        }
+
         //Print them
-        foreach (Collider item in basketItems) {
-            foreach(GameObject item1 in shoppingList)
+        foreach (GameObject item in shoppingList)
+        {
+            if (basketItems.Contains(item.name))
             {
-                if (item == item1)
-                {
-                    print("Correct Item picked!");
-                    break;
-                }
+                Debug.Log("Correct Item picked: " + item.name);
             }
-            Debug.Log(item.name);
+            Debug.Log("Item name: " + item.name);
         }
     }
 }

@@ -32,7 +32,6 @@ MonoBehaviour:
   m_Name: Camera Profile
   m_EditorClassIdentifier: 
   settings:
-  - {fileID: -1595423899972332429}
   - {fileID: 982583231431288739}
 --- !u!114 &982583231431288739
 MonoBehaviour:

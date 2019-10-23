@@ -7,6 +7,8 @@ TagManager:
   - Items
   - PlayerController
   - Basket
+  - Counter
+  - ShoppingList
   layers:
   - Default
   - TransparentFX

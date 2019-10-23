@@ -6,21 +6,27 @@ public class CheckItems : MonoBehaviour
 {
     //Get this list in CheckOut script at the end and tally with the shopping list prefabs
     //Change this to private after testing and debugging
-    public List<Collider> triggerList;
+    private List<string> triggerList;
     void Start()
     {
-        triggerList = new List<Collider>();    
+        triggerList = new List<string>();    
     }
     void OnTriggerEnter(Collider item)
     {
+        if (item.tag != "Items")
+        {
+            return;
+        }
+
+        Debug.Log(item.name);
         //If the objects are not the hands of the player
         if (item.transform.parent.tag != "PlayerController")
         {
             //if the object is not already in the list
-            if (!triggerList.Contains(item))
+            if (!triggerList.Contains(item.name))
             {
                 //add the object to the list
-                triggerList.Add(item);
+                triggerList.Add(item.name);
             }
         }
     }
@@ -28,15 +34,15 @@ public class CheckItems : MonoBehaviour
     void OnTriggerExit(Collider item)
     {
         //if the object is in the list
-        if (triggerList.Contains(item))
+        if (triggerList.Contains(item.name))
         {
             //remove it from the list
-            triggerList.Remove(item);
+            triggerList.Remove(item.name);
         }
 
     }
 
-    public List<Collider> GetBasketItems() {
+    public List<string> GetBasketItems() {
         return triggerList;
     }
 }
