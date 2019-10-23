@@ -15,7 +15,7 @@ MonoBehaviour:
   active: 1
   enabled:
     overrideState: 1
-    value: 0
+    value: 1
   mode:
     overrideState: 1
     value: 1
@@ -96,7 +96,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   settings:
   - {fileID: -4937324875413962464}
-  - {fileID: 6381735488632744646}
+  - {fileID: 5044429793609801450}
+--- !u!114 &5044429793609801450
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: Grayscale
+  m_EditorClassIdentifier: Assembly-CSharp::Grayscale
+  active: 1
+  enabled:
+    overrideState: 1
+    value: 1
+  blend:
+    overrideState: 1
+    value: 0.7
 --- !u!114 &6381735488632744646
 MonoBehaviour:
   m_ObjectHideFlags: 3
