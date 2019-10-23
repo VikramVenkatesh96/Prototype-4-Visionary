@@ -1,5 +1,24 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-5671017931377133544
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c89715dc0378ff48819d81f2236bb6d, type: 3}
+  m_Name: Grayscale
+  m_EditorClassIdentifier: 
+  active: 1
+  enabled:
+    overrideState: 1
+    value: 1
+  blend:
+    overrideState: 1
+    value: 0.707
 --- !u!114 &-4937324875413962464
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -96,7 +115,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   settings:
   - {fileID: -4937324875413962464}
-  - {fileID: 5044429793609801450}
+  - {fileID: -5671017931377133544}
+--- !u!114 &399675453383149547
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 0}
+  m_Name: Grayscale
+  m_EditorClassIdentifier: Assembly-CSharp::Grayscale
+  active: 1
+  enabled:
+    overrideState: 1
+    value: 1
+  blend:
+    overrideState: 1
+    value: 0.5
 --- !u!114 &5044429793609801450
 MonoBehaviour:
   m_ObjectHideFlags: 3

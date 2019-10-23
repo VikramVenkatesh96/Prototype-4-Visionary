@@ -24,8 +24,10 @@
 			_startPos.y = 1 - _startPos.y;
 		#endif
 		//计算uv到中间点的向量(向外扩，反过来就是向里缩)
+	    //culcate the vector between UV and middle point
 		float2 dv = _startPos.xy - i.uv;
 		//按照屏幕长宽比进行缩放
+		//base on size of screen to zoom
 		float dis = sqrt(dv.x * dv.x + dv.y * dv.y);
 		//用sin函数计算出波形的偏移值factor
 		//dis在这里都是小于1的，所以我们需要乘以一个比较大的数，比如60，这样就有多个波峰波谷
