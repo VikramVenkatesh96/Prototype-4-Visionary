@@ -42,14 +42,6 @@ public class watereffect : PostEffectBase
 
     void Update()
     {
-        if (Input.GetMouseButton(0))
-        {
-            Vector2 mousePos = Input.mousePosition;
-            //将mousePos转化为（0，1）区间
-            // mouse postion to range between(0,1)
-            startPos = new Vector4(mousePos.x / Screen.width, mousePos.y / Screen.height, 0, 0);
-            waveStartTime = Time.time;
-        }
 
     }
 }
