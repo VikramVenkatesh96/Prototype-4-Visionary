@@ -1720,10 +1720,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d9e239d9acdc6840bba2e387cc1a5b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shoppingList:
-  - {fileID: 4073524002906274633, guid: 2b1e4e253ec4b694cb7e08c8078d99fc, type: 3}
-  - {fileID: 2225378107118401073, guid: 27958c1457519e242a725434af55bf03, type: 3}
-  - {fileID: 158391445524487657, guid: b145f36e893fc76489c5c9bc0c339750, type: 3}
+  listGenerator: {fileID: 369032413}
 --- !u!1 &314550085
 GameObject:
   m_ObjectHideFlags: 0
@@ -1892,6 +1889,7 @@ GameObject:
   - component: {fileID: 369032410}
   - component: {fileID: 369032412}
   - component: {fileID: 369032411}
+  - component: {fileID: 369032413}
   m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
@@ -1921,11 +1919,7 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 369032409}
-  m_Text: '1. Kellog''s All-Bran
-
-    2. Cheerios
-
-    3. Kellog''s Mini Wheats'
+  m_Text: 
   m_OffsetZ: 0
   m_CharacterSize: 0.06
   m_LineSpacing: 1.5
@@ -1976,6 +1970,22 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &369032413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 369032409}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18162aa56bd74304db81662be3275a4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  items: []
+  shoppingList: []
+  checkoutList: []
+  genRow: {fileID: 597752246}
 --- !u!1 &377315367
 GameObject:
   m_ObjectHideFlags: 0

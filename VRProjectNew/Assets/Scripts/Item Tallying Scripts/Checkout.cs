@@ -5,16 +5,18 @@ using UnityEngine;
 public class Checkout : MonoBehaviour
 {
     private CheckItems check;
-    public List<GameObject> shoppingList;
+    //public List<string> shoppingList;
+    public ShoppingListGenerator listGenerator;
 
     void Start()
     { 
         //a little manual effort but saves a lot of computations
         check = GameObject.FindGameObjectWithTag("Basket").transform.GetChild(5).GetComponent<CheckItems>();
+        //shoppingList = new List<string>();
+
     }
     void OnTriggerEnter(Collider other)
-    {   /*Look at the output log for the item names 
-        and write your code here*/
+    {   
         //Get the item collider list
         List<string> basketItems = check.GetBasketItems();
 
@@ -24,13 +26,13 @@ public class Checkout : MonoBehaviour
         }
 
         //Print them
-        foreach (GameObject item in shoppingList)
+        foreach (string item in listGenerator.checkoutList)
         {
-            if (basketItems.Contains(item.name))
+            if (basketItems.Contains(item))
             {
-                Debug.Log("Correct Item picked: " + item.name);
+                Debug.Log("Correct Item picked: " + item);
             }
-            Debug.Log("Item name: " + item.name);
+            //Debug.Log("Item name: " + item);
         }
     }
 }
