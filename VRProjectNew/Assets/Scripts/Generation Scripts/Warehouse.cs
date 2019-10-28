@@ -8,12 +8,23 @@ public class Warehouse : MonoBehaviour
     public GameObject[] milk;
     public GameObject[] cans;
 
-    public GameObject[] GetRandomCereals(int numOfRows) {
+    public GameObject[] GetRandomCereals(int numOfRows)
+    {
         List<GameObject> randomCereals = new List<GameObject>();
 
-        while (randomCereals.Count != numOfRows ){ 
-            int index = Random.Range(0,cereals.Length - 1);
-            if (!randomCereals.Contains(cereals[index]))
+        while (randomCereals.Count != numOfRows)
+        {
+            int index = Random.Range(0, cereals.Length - 1);
+            //Check if variety exceed number of rows
+            if (cereals.Length >= numOfRows)
+            {
+                //Make sure no two rows contain same items
+                if (!randomCereals.Contains(cereals[index]))
+                {
+                    randomCereals.Add(cereals[index]);
+                }
+            }
+            else
             {
                 randomCereals.Add(cereals[index]);
             }
@@ -23,27 +34,47 @@ public class Warehouse : MonoBehaviour
     }
     public GameObject[] GetRandomMilk(int numOfRows)
     {
-        GameObject[] randomMilk = new GameObject[numOfRows];
+        List<GameObject> randomMilk = new List<GameObject>();
 
-        for (int i = 0; i < numOfRows; ++i)
+        while (randomMilk.Count != numOfRows)
         {
             int index = Random.Range(0, milk.Length - 1);
-            randomMilk[i] = milk[index];
+            if (milk.Length >= numOfRows)
+            {
+                if (!randomMilk.Contains(milk[index]))
+                {
+                    randomMilk.Add(milk[index]);
+                }
+            }
+            else
+            {
+                randomMilk.Add(milk[index]);
+            }
         }
 
-        return randomMilk;
+        return randomMilk.ToArray();
     }
     public GameObject[] GetRandomCans(int numOfRows)
     {
-        GameObject[] randomCans = new GameObject[numOfRows];
+        List<GameObject> randomCans = new List<GameObject>();
 
-        for (int i = 0; i < numOfRows; ++i)
+        while (randomCans.Count != numOfRows)
         {
             int index = Random.Range(0, cans.Length - 1);
-            randomCans[i] = cans[index];
+            if (cans.Length >= numOfRows)
+            {
+                if (!randomCans.Contains(cans[index]))
+                {
+                    randomCans.Add(cans[index]);
+                }
+            }
+            else
+            {
+                randomCans.Add(cans[index]);
+            }
         }
 
-        return randomCans;
-    }
+        return randomCans.ToArray();
 
+    }
 }

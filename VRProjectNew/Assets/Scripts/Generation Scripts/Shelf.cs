@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class Shelf : MonoBehaviour
 {
-    public enum StockType { Cans, Milk, Cereal };
+    public int maxNumber;
+    public float minGapBetweenObjects;
+    public float maxGapBetweenObjects;
+    public enum StockType { Cans, Cereal, Milk};
     public StockType stockType;
     public GameObject[] stock;
 }

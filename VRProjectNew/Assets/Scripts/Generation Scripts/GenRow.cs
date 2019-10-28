@@ -7,10 +7,8 @@ public class GenRow : MonoBehaviour
 
     //temporary arrangement to stop ShoppingListGenerator from throwing errors
     public GameObject[] stocks;
-    public int maxNumber = 3;
+
     public bool autoUpdate;
-    public float minGapBetweenObjects;
-    public float maxGapBetweenObjects;
     private List<Vector3> startPositions;
     private List<Vector3> endPositions;
     private GameObject[] Shelves;
@@ -39,9 +37,21 @@ public class GenRow : MonoBehaviour
 
             //Set the stock for that particular shelf
             Shelf shelfComponent = shelf.GetComponent<Shelf>();
-            
-            //Currently configured for cereals. To add: mechanism to control for other type of objects
-            shelfComponent.stock = wareHouse.GetRandomCereals(numOfRows);
+
+           //Get random stock from warehouse to stock
+
+            if (shelfComponent.stockType == Shelf.StockType.Cereal)
+            {
+                shelfComponent.stock = wareHouse.GetRandomCereals(numOfRows);
+            }
+            else if (shelfComponent.stockType == Shelf.StockType.Milk)
+            {
+                shelfComponent.stock = wareHouse.GetRandomMilk(numOfRows);
+            }
+            else if (shelfComponent.stockType == Shelf.StockType.Cans)
+            {
+                shelfComponent.stock = wareHouse.GetRandomCans(numOfRows);
+            }
 
             //Find parent items GameObject
             GameObject parent = shelf.transform.Find("Items").gameObject;
@@ -49,7 +59,7 @@ public class GenRow : MonoBehaviour
             //Populate the Shelf for each row in the shelf
             for (int i = 0; i < numOfRows; ++i)
             {
-                PopulateShelf(i, shelfComponent.stock[i] ,parent);
+                PopulateShelf(i, shelfComponent ,parent);
             }
 
             //Clear all lists before adding again
@@ -68,15 +78,22 @@ public class GenRow : MonoBehaviour
         }
     }
 
-    private void PopulateShelf(int rowNumber, GameObject stock, GameObject parent)
+    private void PopulateShelf(int rowNumber, Shelf shelf, GameObject parent)
     {
         float offset = 0;
-
-        for (int i = 0; i < maxNumber; ++i)
+        for (int i = 0; i < shelf.maxNumber; ++i)
         {
+            //Get the new position of object to be created by shifting offset along the the row vector
             Vector3 newPos = startPositions[rowNumber] + (endPositions[rowNumber] - startPositions[rowNumber]).normalized * offset;
-            Instantiate(stock, newPos, parent.transform.rotation, parent.transform);
-            offset += Random.Range(minGapBetweenObjects, maxGapBetweenObjects);
+            
+            //Create the actual object at that position
+            GameObject temp = Instantiate(shelf.stock[rowNumber], newPos, parent.transform.rotation, parent.transform);
+
+            //Rename the object for easy tokenization in checkout code
+            temp.name = shelf.stock[rowNumber].name + " " + i;
+
+            //Move the offsets accordingly
+            offset += Random.Range(shelf.minGapBetweenObjects, shelf.maxGapBetweenObjects);
         }
     }
 
