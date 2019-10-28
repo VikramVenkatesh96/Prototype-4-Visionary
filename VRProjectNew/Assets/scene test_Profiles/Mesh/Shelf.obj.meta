@@ -1,32 +1,16 @@
 fileFormatVersion: 2
 guid: 78f7c72ae5bedc14a8aec7a1a199a383
 ModelImporter:
-  serializedVersion: 25
-  internalIDToNameTable:
-  - first:
-      1: 100000
-    second: pCube8
-  - first:
-      1: 100002
-    second: //RootNode
-  - first:
-      4: 400000
-    second: pCube8
-  - first:
-      4: 400002
-    second: //RootNode
-  - first:
-      21: 2100000
-    second: pCube8Mat
-  - first:
-      23: 2300000
-    second: pCube8
-  - first:
-      33: 3300000
-    second: pCube8
-  - first:
-      43: 4300000
-    second: pCube8
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: polySurface12
+    100002: //RootNode
+    400000: polySurface12
+    400002: //RootNode
+    2100000: polySurface12Mat
+    2300000: polySurface12
+    3300000: polySurface12
+    4300000: polySurface12
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -55,7 +39,7 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 0
+    isReadable: 1
   meshes:
     lODScreenPercentages: []
     globalScale: 1
@@ -69,19 +53,18 @@ ModelImporter:
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
+    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
     preserveHierarchy: 0
-    skinWeightsMode: 0
-    maxBonesPerVertex: 4
-    minBoneWeight: 0.001
-    meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
     useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -90,11 +73,10 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
-  referencedClips: []
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
-    serializedVersion: 3
+    serializedVersion: 2
     human: []
     skeleton: []
     armTwist: 0.5
@@ -104,7 +86,6 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
