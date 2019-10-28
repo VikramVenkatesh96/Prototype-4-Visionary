@@ -5,14 +5,26 @@ ModelImporter:
   fileIDToRecycleName:
     100000: //RootNode
     100002: pCylinder10
+    100004: polySurface3
     400000: //RootNode
     400002: pCylinder10
+    400004: polySurface3
     2100000: pCylinder10Mat
+    2100002: polySurface3Mat
     2300000: pCylinder10
+    2300002: polySurface3
     3300000: pCylinder10
+    3300002: polySurface3
     4300000: pCylinder10
+    4300002: polySurface3
     6400000: pCylinder10
-  externalObjects: {}
+    6400002: polySurface3
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: polySurface3Mat
+    second: {fileID: 2100000, guid: 4896e75e54c81bf428bf7ce00cd06f64, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
