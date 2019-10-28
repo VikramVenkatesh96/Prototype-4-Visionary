@@ -14,6 +14,7 @@ public class ShoppingListGenerator : MonoBehaviour
     {
         "CerealBox",
         "Can",
+        "Chips",
         "Milk"
     };
 
@@ -44,6 +45,14 @@ public class ShoppingListGenerator : MonoBehaviour
         "1% Milk",
         "2% Milk",
         "Whole Milk"
+    };
+
+    string[] enumChips =
+    {
+        "Ray's Classic",
+        "Ray's Flamin' Hot",
+        "Ray's Barbecue",
+        "Ray's Salt & Vinegar"
     };
 
     // Start is called before the first frame update
@@ -168,8 +177,32 @@ public class ShoppingListGenerator : MonoBehaviour
                 }
 
             }
+            //if item is chips
+            else if (shoppingList[i].Split('_')[0].CompareTo(enumType[2]) == 0)
+            {
+                //item is Chip_1
+                if (shoppingList[i].Split('_')[1].CompareTo("1") == 0)
+                {
+                    shoppingList[i] = enumChips[0];
+                }
+                //item is Chip_2
+                else if (shoppingList[i].Split('_')[1].CompareTo("2") == 0)
+                {
+                    shoppingList[i] = enumChips[1];
+                }
+                //item is Chip_3
+                else if (shoppingList[i].Split('_')[1].CompareTo("3") == 0)
+                {
+                    shoppingList[i] = enumChips[2];
+                }
+                //item is Chip_4
+                else if (shoppingList[i].Split('_')[1].CompareTo("4") == 0)
+                {
+                    shoppingList[i] = enumChips[3];
+                }
+            }
             //if item is milk
-            else
+            else if (shoppingList[i].Split('_')[0].CompareTo(enumType[3]) == 0)
             {
                 //item is Milk_1
                 if (shoppingList[i].Split('_')[1].CompareTo("1") == 0)
