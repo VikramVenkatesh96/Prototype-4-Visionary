@@ -16,7 +16,6 @@ public class GenRow : MonoBehaviour
     private GameObject[] Shelves;
     private Warehouse wareHouse;
     
-    //Currently works only for those shelves with default rotation
     public void GenerateItems() {
 
         startPositions = new List<Vector3>();
