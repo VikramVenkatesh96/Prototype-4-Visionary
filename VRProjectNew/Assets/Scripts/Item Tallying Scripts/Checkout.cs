@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Checkout : MonoBehaviour
 {
     private CheckItems check;
     //public List<string> shoppingList;
     public ShoppingListGenerator listGenerator;
+    public Text displayText;
 
     void Start()
     { 
