@@ -8,7 +8,8 @@ public class ShoppingListGenerator : MonoBehaviour
     public GameObject[] items;
     public List<string> shoppingList;
     public List<string> checkoutList;
-    public GenRow genRow;
+    public GameObject shelf;
+    public List<GameObject> listOfItems;
 
     string[] enumType =
     {
@@ -59,13 +60,51 @@ public class ShoppingListGenerator : MonoBehaviour
     void Start()
     {
 
-        items = new GameObject[genRow.stocks.Length];
-
-        for (int i = 0; i < genRow.stocks.Length; i++)
+        for (int i = 0; i < shelf.transform.childCount; i++)
         {
-            items[i] = genRow.stocks[i];
+            Shelf shelfType = shelf.transform.GetChild(i).gameObject.GetComponent<Shelf>();
+            if (shelfType.stockType == Shelf.StockType.Cereal)
+            {
+                foreach(GameObject item in shelfType.stock)
+                {
+                    if(!listOfItems.Contains(item))
+                    {
+                        listOfItems.Add(item);
+                    }
+                }
+            }
+            else if (shelfType.stockType == Shelf.StockType.Cans)
+            {
+                foreach (GameObject item in shelfType.stock)
+                {
+                    if (!listOfItems.Contains(item))
+                    {
+                        listOfItems.Add(item);
+                    }
+                }
+            }
+            else if (shelfType.stockType == Shelf.StockType.Milk)
+            {
+                foreach (GameObject item in shelfType.stock)
+                {
+                    if (!listOfItems.Contains(item))
+                    {
+                        listOfItems.Add(item);
+                    }
+                }
+            }
+            else if (shelfType.stockType == Shelf.StockType.Chips)
+            {
+                foreach (GameObject item in shelfType.stock)
+                {
+                    if (!listOfItems.Contains(item))
+                    {
+                        listOfItems.Add(item);
+                    }
+                }
+            }
         }
-
+        
         ListGenerator();
     }
 
@@ -73,11 +112,11 @@ public class ShoppingListGenerator : MonoBehaviour
     {
 
         shoppingList = new List<string>();
-        //add 3 random items into shoppingList with their generic type name
+        //add 4 random items into shoppingList with their generic type name
         for (int i = 0; i < 4; i++)
         {
             //gte a random item name from the items array
-            string temp = (items[Random.Range(0, items.Length - 1)]).name;
+            string temp = (listOfItems[Random.Range(0, listOfItems.Count - 1)]).name;
             while (shoppingList.Contains(temp))
             {
                 //makes sure the same item does not appear again in the shopping list
