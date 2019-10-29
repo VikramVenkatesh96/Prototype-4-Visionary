@@ -250,6 +250,7 @@ GameObject:
   - component: {fileID: 6160640146133325265}
   - component: {fileID: 6160640146133325264}
   - component: {fileID: 6160640146133325267}
+  - component: {fileID: 1397309207302235415}
   m_Layer: 0
   m_Name: Basket
   m_TagString: Basket
@@ -337,6 +338,18 @@ MonoBehaviour:
   m_snapOrientation: 0
   m_snapOffset: {fileID: 0}
   m_grabPoints: []
+--- !u!114 &1397309207302235415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6160640147070829518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6886c5f7fc3ba544eb57e127bd371e5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6160640147592969321
 GameObject:
   m_ObjectHideFlags: 0
