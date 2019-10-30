@@ -40,6 +40,7 @@ public class CheckItems : MonoBehaviour
             triggerList.Remove(item.name);
         }
 
+        
     }
 
     public List<string> GetBasketItems() {
