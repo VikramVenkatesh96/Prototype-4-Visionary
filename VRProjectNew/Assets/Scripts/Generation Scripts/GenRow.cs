@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class GenRow : MonoBehaviour
 {
-
-    //temporary arrangement to stop ShoppingListGenerator from throwing errors
-    public GameObject[] stocks;
-
     public bool autoUpdate;
     private List<Vector3> startPositions;
     private List<Vector3> endPositions;
