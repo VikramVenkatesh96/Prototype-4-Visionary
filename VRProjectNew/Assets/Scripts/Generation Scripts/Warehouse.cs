@@ -7,7 +7,7 @@ public class Warehouse : MonoBehaviour
     public GameObject[] cereals;
     public GameObject[] milk;
     public GameObject[] cans;
-
+    public GameObject[] chips;
     public GameObject[] GetRandomCereals(int numOfRows)
     {
         List<GameObject> randomCereals = new List<GameObject>();
@@ -75,6 +75,29 @@ public class Warehouse : MonoBehaviour
         }
 
         return randomCans.ToArray();
+
+    }
+    public GameObject[] GetRandomChips(int numOfRows)
+    {
+        List<GameObject> randomChips = new List<GameObject>();
+
+        while (randomChips.Count != numOfRows)
+        {
+            int index = Random.Range(0, chips.Length - 1);
+            if (chips.Length >= numOfRows)
+            {
+                if (!randomChips.Contains(chips[index]))
+                {
+                    randomChips.Add(chips[index]);
+                }
+            }
+            else
+            {
+                randomChips.Add(chips[index]);
+            }
+        }
+
+        return randomChips.ToArray();
 
     }
 }

@@ -15,8 +15,8 @@ GameObject:
   - component: {fileID: 4127656549276987928}
   - component: {fileID: -8273723485209138509}
   m_Layer: 0
-  m_Name: Chip2
-  m_TagString: Untagged
+  m_Name: Chip_2
+  m_TagString: Items
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -166,7 +166,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6246692222100028866}
-  m_Mesh: {fileID: -7441193211852911946, guid: 5b087c8420b8f1b449c22f829b9c1361, type: 3}
+  m_Mesh: {fileID: 4300002, guid: 5b087c8420b8f1b449c22f829b9c1361, type: 3}
 --- !u!23 &26660649913445456
 MeshRenderer:
   m_ObjectHideFlags: 0

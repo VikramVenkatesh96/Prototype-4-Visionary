@@ -48,6 +48,10 @@ public class GenRow : MonoBehaviour
             {
                 shelfComponent.stock = wareHouse.GetRandomCans(numOfRows);
             }
+            else if (shelfComponent.stockType == Shelf.StockType.Chips)
+            {
+                shelfComponent.stock = wareHouse.GetRandomChips(numOfRows);
+            }
 
             //Find parent items GameObject
             GameObject parent = shelf.transform.Find("Items").gameObject;
