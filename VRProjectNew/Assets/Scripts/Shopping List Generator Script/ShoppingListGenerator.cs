@@ -16,7 +16,7 @@ public class ShoppingListGenerator : MonoBehaviour
     {
         "CerealBox",
         "Can",
-        "Chips",
+        "Chip",
         "Milk"
     };
 
@@ -159,7 +159,7 @@ public class ShoppingListGenerator : MonoBehaviour
 
         shoppingList = new List<string>();
         //add 4 random items into shoppingList with their generic type name
-        for (int i = 0; i < 4; i++)
+        for (int i = 0; i < 1; i++)
         {
             //gte a random item name from the items array
             string temp = (listOfItems[Random.Range(0, listOfItems.Count - 1)]).name;

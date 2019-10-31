@@ -29,30 +29,37 @@ public class Checkout : MonoBehaviour
         {
             basketItems[i] = basketItems[i].Split(' ')[0];
         }
-
-        //Print them
-        foreach (string item in listGenerator.checkoutList)
+        if (listGenerator.checkoutList != null)
         {
-            if (basketItems.Contains(item))
+            //Print them
+            foreach (string item in listGenerator.checkoutList)
             {
-                results.Add(true);
-                Debug.Log("Correct Item picked: " + item);
-                
+                if (basketItems.Contains(item))
+                {
+                    results.Add(true);
+                    Debug.Log("Correct Item picked: " + item);
+
+                }
+                else
+                {
+                    results.Add(false);
+                }
+                //Debug.Log("Item name: " + item);
+            }
+
+            if (!results.Contains(false))
+            {
+                finalResult = true;
             }
             else
             {
-                results.Add(false);
+                finalResult = false;
             }
-            //Debug.Log("Item name: " + item);
-        }
-
-        if (!results.Contains(false))
-        {
-            finalResult = true;
         }
         else
         {
-            finalResult = false;
+            return;
         }
+        
     }
 }
