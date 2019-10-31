@@ -7,6 +7,8 @@ public class Checkout : MonoBehaviour
 {
     private CheckItems check;
     public ShoppingListGenerator listGenerator;
+    public static bool finalResult;
+    public static List<bool> results;
     //public GameObject screenText;
 
     void Start()
@@ -14,6 +16,8 @@ public class Checkout : MonoBehaviour
         
         //a little manual effort but saves a lot of computations
         check = GameObject.FindGameObjectWithTag("Basket").transform.GetChild(5).GetComponent<CheckItems>();
+
+        results = new List<bool>();
 
     }
     void OnTriggerEnter(Collider other)
@@ -31,10 +35,24 @@ public class Checkout : MonoBehaviour
         {
             if (basketItems.Contains(item))
             {
+                results.Add(true);
                 Debug.Log("Correct Item picked: " + item);
                 
             }
+            else
+            {
+                results.Add(false);
+            }
             //Debug.Log("Item name: " + item);
+        }
+
+        if (!results.Contains(false))
+        {
+            finalResult = true;
+        }
+        else
+        {
+            finalResult = false;
         }
     }
 }
